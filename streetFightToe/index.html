@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <!-- always use defer behind script to run after loading the body tag-->
+  <script src="script.js" defer></script>
+  <title>Street Fight Toe</title>
+</head>
+
+<body>
+  <header>
+    <h1>Street Fight Toe</h1>
+    <!-- audio control for music background to have somefun and is looping too! forever...-->
+    <audio controls loop class="audio-control" id="audio-control">
+      <source src="./assets/stage/chunli-stage.mp3" type="audio/mpeg">
+    </audio>
+    <!-- street fighter always have some background where the fight happen, this one too-->
+    <img class="china" src="./assets/stage/china.gif" alt="">
+  </header>
+  <!-- I decided to always amke class and id to work on style using class and script using ID this is just for preference for file management-->
+  <div class="board" id="board">
+    <!-- class cell for CSS and data-cell for java script DOM -->
+    <div class="cell" data-cell>1</div>
+    <div class="cell" data-cell>2</div>
+    <div class="cell" data-cell>3</div>
+    <div class="cell" data-cell>4</div>
+    <div class="cell" data-cell>5</div>
+    <div class="cell" data-cell>6</div>
+    <div class="cell" data-cell>7</div>
+    <div class="cell" data-cell>8</div>
+    <div class="cell" data-cell>9</div>
+    <div class="cell" data-cell>10</div>
+    <div class="cell" data-cell>11</div>
+    <div class="cell" data-cell>12</div>
+    <div class="cell" data-cell>13</div>
+    <div class="cell" data-cell>14</div>
+    <div class="cell" data-cell>15</div>
+    <div class="cell" data-cell>16</div>
+  </div>
+  <div class="winning-message" id="winningMessage">
+    <!-- data-winning-message-text for script DOM the player who win -->
+    <div data-winning-message-text></div>
+       <!-- Restart button when the game end or draw -->
+    <button id="restartButton">Restart</button>
+  </div>
+
+  <!-- inputting all the sound effect required, with ID for DOM script -->
+  <audio id="chunli-kick" src="./assets/chunli/chun-li-kick.mp3"></audio>
+  <audio id="chunli-laugh" src="./assets/chunli/chun-li-laugh.mp3"></audio>
+  <audio id="chunli-yata" src="./assets/chunli/chun-li-yata.mp3"></audio>
+  <audio id="ryu-hadoken" src="./assets/ryu/ryuken-hadoken.mp3"></audio>
+  <audio id="ryu-kick" src="./assets/ryu/ryuken-kick.mp3"></audio>
+  <audio id="ryu-shoryuken" src="./assets/ryu/ryuken-shoryuken.mp3"></audio>
+  <audio id="start-game" src="./assets/stage/fight.mp3"></audio>
+  <audio id="you-win" src="./assets/stage/you-win-street-fighter.mp3"></audio>
+  <audio id="draw-game" src="./assets/stage/draw-sound.mp3"></audio>
+  <audio id="kick-sound" src="./assets/stage/street_fighter_big_punch_sound_Effect.mp3"></audio>
+  <audio id="winning-sound" src="./assets/stage/089 - Victory Screen [CPS-2].mp3"></audio>
+
+</body>
+
+</html>

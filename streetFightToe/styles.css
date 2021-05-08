@@ -1,0 +1,236 @@
+/*
+basic box sizing, *(everything) that current box, after and before
+}*/
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+/*
+setting up street figt toe, audio and background image design
+}*/
+header {
+  background-color: red;
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  font-style: oblique;
+  display: grid;
+  grid-column: auto;
+  justify-content: center;
+  justify-items: center;
+}
+
+h1 {
+  margin: 50px;
+}
+
+/*
+trying to make some fun with audio control
+}*/
+.audio-control:hover {
+  transform: scale(1.1);filter: drop-shadow(2px 3px 3px #333);
+}
+/*
+adjustign the size and else for the tram animated gif
+}*/
+.img-background {
+  width: 600px;
+}
+
+/*
+CSS variable for automatic scalling so we don't need to do it one by one if we want to change it in the future, i wil use this more often in the future
+}*/
+:root {
+  --cell-size: 150px;
+  --mark-size: 100%;
+}
+/*
+this is to remove small margin on the side left and top
+}*/
+body {
+  margin: 0;
+}
+/*
+setting the div that wrapping up all 16 boxes using view height and view width super nice with this new found measure system
+}*/
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(4, auto)
+}
+/*
+setting each box inside the board div, using CSS variable in this section for fun
+}*/
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /*
+pointer to highlite box that can be mark
+}*/
+  cursor: pointer;
+  font-size: 48px;
+  color: rgb(44, 44, 44);
+}
+  /*
+when cell has been manipulate/filled with ryu or chunli
+}*/
+.cell.ryu, .cell.chunli {
+    /*
+when box has filled, you pointer will change to not allowed
+}*/
+  cursor: not-allowed;
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+/*
+When ryu turn, only apply hover when the cell do NOT has chunli or ryu
+}*/
+.board.ryu .cell:not(.ryu):not(.chunli):hover::before, .board.ryu .cell:not(.ryu):not(.chunli):hover::after, .board.chunli .cell:not(.ryu):not(.chunli):hover::before {
+  opacity: 25%;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.cell.ryu::before, .cell.ryu::after {
+  background-color: red;
+}
+/*
+Using pseudo elements to manipulate HTML similar to DOM, content start empty "", background image is the placemark of player turn.  
+}*/
+.cell.ryu::before, .cell.ryu::after, .board.ryu .cell:not(.ryu):not(.chunli):hover::before, .board.ryu .cell:not(.ryu):not(.chunli):hover::after {
+  content: '';
+  position: absolute;
+  background-image: url(./assets/ryu/Ryu-face.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.ryu-face::before, .board.ryu .cell:not(.ryu):not(.chunli):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.chunli::before, .cell.chunli::after {
+  background-color: blue;
+}
+
+.cell.chunli::before, .cell.chunli::after, .board.chunli .cell:not(.ryu):not(.chunli):hover::before, .board.chunli .cell:not(.ryu):not(.chunli):hover::after {
+  content: '';
+  position: absolute;
+  background-image: url(./assets/chunli/chunli-face.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cell.chunli::before, .board.chunli .cell:not(.ryu):not(.chunli):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+@keyframes shake-bottom {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes slide-in-fwd-center {
+  0% {
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.winning-message {
+  /*
+we put none because by default we dont want this to show up until its get called
+}*/
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./assets/chunli/chunli-kick.gif);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 7rem;
+  flex-direction: column;
+}
+/*
+when class winning message get show, display
+}*/
+.winning-message.show {
+  display: flex;
+}
+
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 15px solid black;
+  padding: .25em .5em;
+  cursor: pointer;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.winning-message button:hover {
+  background-color: black;
+  color: red;
+  border-color: white;
+}
+
