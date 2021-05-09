@@ -24,10 +24,8 @@ I did it many times, and also hear what they are saying about what these code do
 such as CSS variable, array destructoring, and also Kasun shows me about CSS animation and transition, I also look at MDN for sounds and sound control, volume start at 10%
 
 ## Known Bugs
-
-no bug i think at this stage, unless you found one.
-Last bug i fixed when it turn out that playing music at start is not supported by browser, so we have you button to start the sound.
-also i copy startgame function and make another name called restartgame to fix it.
+Last bug i fixed when it turn out that playing music at start is not supported by browser, so we need to put button to start the sound.
+also i copy startgame function and make another name called restartgame to fix it. I am also will be adding more features and will encounter bugs for sure.
 
 
 ## Future features (Or you can call this Wishlist)
