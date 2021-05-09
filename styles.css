@@ -1,6 +1,5 @@
 /*
-basic box sizing, *(everything) that current box, after and before
-}*/
+basic box sizing, *(everything) that current box, after and before. have a look at the behavior of the 16boxes to learh with other options*/
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -224,7 +223,7 @@ we put none because by default we dont want this to show up until its get called
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 7rem;
+  font-size: 4rem;
   flex-direction: column;
 }
 /*
@@ -232,6 +231,8 @@ when class winning message get show, display
 }*/
 .winning-message.show {
   display: flex;
+  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-delay: 1.5s;
 }
 
 .winning-message button {
@@ -249,3 +250,13 @@ when class winning message get show, display
   border-color: white;
 }
 
+@-webkit-keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

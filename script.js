@@ -1,4 +1,4 @@
-//defining string to be use to manipulate on HTML
+//defining string to be use to manipulate on HTML class board
 const playerRyu = 'ryu'
 const playerChunli = 'chunli'
 //formula of winning using array
@@ -41,7 +41,7 @@ startGame();
 
 restartButton.addEventListener('click', reStartGame);
 
-//
+//first function if you are inside the page or restart the browser, however after restart buttin click it will go to restart function below this function and looping that one.
 function startGame() {
   chunliTurn = false
   cellElements.forEach(cell => {
@@ -53,9 +53,10 @@ function startGame() {
     cell.addEventListener('click', handleClick, { once: true })
   })
   setBoardHoverClass()
-  //removing winning slide 
+  //removing winning slide at start
   winningMessageElement.classList.remove('show')
 }
+
 //looping this one after re-start button has been clicked
 function reStartGame() {
   chunliTurn = false
@@ -70,9 +71,11 @@ function reStartGame() {
   winningMessageElement.classList.remove('show')
 }
 
+//sound when you place restart button "fight"
 function playStartGameSound() {
   fightSound.play();
 }
+
 //using event target for selecting the cell being manipulate in html by DOM
 function handleClick(e) {
   //cell is the target being clicked
@@ -92,6 +95,7 @@ function handleClick(e) {
     setBoardHoverClass()
   }
 }
+
 //function to place mark then put it inside handle click function to make it run
 function placeMark(cell, currentPlayer) {
   //place string into cell class using classList.add 
@@ -116,6 +120,7 @@ function setBoardHoverClass() {
   }
 }
 
+//After calculation of array happen, place innertext to HTML and show the curtain that has been hidden with CSS using display:none
 function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!'
@@ -129,16 +134,7 @@ function endGame(draw) {
   winningMessageElement.classList.add('show');
 }
 
-function isDraw() {
-  ///destructuring array methods to check if all cells has been filled
-  return [...cellElements].every(cell => {
-    return cell.classList.contains(playerRyu) || cell.classList.contains(playerChunli)
-  })
-}
-
-
-
-
+//sound effect when placemark happen
 function playPlacemarkSound() {
   if (chunliTurn) {
     chunliSoundKick.play();
@@ -147,14 +143,10 @@ function playPlacemarkSound() {
   } else {
     ryuSoundKick.play();
     setTimeout("kickSound.play()", 1500);
-
-
   }
 }
 
-
-
-
+//sound effect to play whoever win
 function playPlayerWinSound() {
   if (winningMessageTextElement.innerText === "Chunli's Wins!") {
     chunliWinSound.play();
@@ -162,8 +154,6 @@ function playPlayerWinSound() {
     ryuWinSound.play();
   }
 }
-
-
 
 //this is the calculation formula for deciding the array that has been formulated above
 function checkWin(currentPlayer) {
@@ -174,5 +164,13 @@ function checkWin(currentPlayer) {
       //check all element inside 16 cells using array and must contain all same player mark (currentPlayer)
       return cellElements[index].classList.contains(currentPlayer)
     })
+  })
+}
+
+//function to calculate draw
+function isDraw() {
+  ///destructuring array methods to check if all cells has been filled
+  return [...cellElements].every(cell => {
+    return cell.classList.contains(playerRyu) || cell.classList.contains(playerChunli)
   })
 }
