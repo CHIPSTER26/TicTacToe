@@ -32,7 +32,6 @@ also i copy startgame function and make another name called restartgame to fix i
 - Play with AI
 - Networked multiplayer
 - make more effect, when the player mark the cell, the other player picture get shaken or the face changed to get hit.
-- the closing effect is too fast i need to make it wait 2-3 second before the curtain of kicking girl called.
 
 ## My experience developing the game.
 I learn lots of things to make it work, doing lots of youtubing which i never did prior to this project.
