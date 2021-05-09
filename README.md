@@ -8,7 +8,7 @@ https://chipster26.github.io/TicTacToe/
 
 ## How it was built 
 
-I used HTML, CSS and JavaScript to build this game. Work from 10PM-2PM not enough sleep.
+I used HTML, CSS and JavaScript to build this game. Work from 10PM-2AM not enough sleep.
 
 
 ## How to play 
