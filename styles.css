@@ -11,7 +11,6 @@ header {
   background-color: red;
   text-align: center;
   color: white;
-  font-size: 2vw;
   font-style: oblique;
   display: grid;
   grid-column: auto;
@@ -23,8 +22,8 @@ header {
 
 h1 {
   margin: 50px;
-  width: 80%;
-  max-width: 450px;
+  width: 100%;
+  font-size: 10vw;
 }
 
 /*
@@ -43,7 +42,7 @@ adjustign the size and else for the tram animated gif
 
 .china {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 /*
