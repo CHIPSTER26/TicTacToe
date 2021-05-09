@@ -32,6 +32,7 @@ Also copy startgame function and make another name called restartgame to fix it.
 - Play with AI
 - Networked multiplayer
 - make more effect, when the player mark the cell, the other player picture get shaken or the face changed to get hit.
+- applying random math into the type of sounds, make winning message apply to the winner rather than using generic kicking girl.
 
 ## My experience developing the game.
 I learn lots of things to make it work, doing lots of youtubing which i never did prior to this project.
