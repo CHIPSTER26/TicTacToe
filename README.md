@@ -19,13 +19,13 @@ Once game ended wait for 3-4 second to hear music theme, wording and final quote
 Enjoy it slowly to hear all the effect.
 
 ## Planning
-I did some googling and found many type of solution for tic tact tow as you would expect, i did code along with the youtuber to get a feeling how they think.
-I did it many times, and also hear what they are saying about what these code do, what's that code do, why they've choosen these path, etc. Learn other technic
+I did some googling and found many types of solution for tic tac toe as you would expect, i did code along with the youtuber to get a feeling how they think.
+I did it many times, and also hear what they are saying about what's these code do, what's that code do, why they've choosen these path, etc. Learn other technic
 such as CSS variable, array destructoring, and also Kasun shows me about CSS animation and transition, I also look at MDN for sounds and sound control, volume start at 10%
 
 ## Known Bugs
 Last bug i fixed when it turn out that playing music at start is not supported by browser, so we need to put button to start the sound.
-also i copy startgame function and make another name called restartgame to fix it. I am also will be adding more features and will encounter bugs for sure.
+Also copy startgame function and make another name called restartgame to fix it. I am will be adding more features and will encounter bugs for sure.
 
 
 ## Future features (Or you can call this Wishlist)
