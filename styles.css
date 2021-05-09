@@ -260,3 +260,11 @@ when class winning message get show, display
     opacity: 1;
   }
 }
+
+/*
+mobile devices re-sizing*/
+@media screen and (max-width: 350px) {
+  body {
+    background-color: red;
+  }
+}
