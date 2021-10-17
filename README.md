@@ -21,7 +21,7 @@ Enjoy it slowly to hear all the effect.
 ## Planning
 I did some googling and found many types of solution for tic tac toe as you would expect, i did code along with the youtuber to get a feeling how they think.
 I did it many times, and also hear what they are saying about what's these code do, what's that code do, why they've choosen these path, etc. Learn other technic
-such as CSS variable, array destructoring, and also Kasun shows me about CSS animation and transition, I also look at MDN for sounds and sound control, volume start at 10%
+such as CSS variable, array destructoring, and CSS animation and transition, I also look at MDN for sounds and sound control, volume start at 10%
 
 ## Known Bugs
 Last bug i fixed when it turn out that playing music at start is not supported by browser, so we need to put button to start the sound.
